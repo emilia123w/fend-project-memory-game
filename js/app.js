@@ -26,29 +26,18 @@ let array= [
        return array;
    }
 array= shuffle(array); //shuffle the cards on the page
-
 /*
  * Display the cards on the page
 */
+//for each method
+/*   - loop through each card and create its HTML
+*   - add each card's HTML to the page
+*/
 function addCards(item, index){
-  $(".deck").innerHTML='<li class="card"><i class=item></i></li>'
-  document.querySelector('.item').className = item;
+  document.querySelector(".deck").innerHTML+=`<li class="card"><i class="${item}"></i></li>`
 }
 
-array[0].forEach(addCards);  //adding cards to html
-
-
-
-
-
- //for each method
- /*   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
-
-
-
+array.forEach(addCards);  //adding cards to html
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -59,3 +48,9 @@ array[0].forEach(addCards);  //adding cards to html
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+ $(".card").click(playGame)
+
+ function playGame(){ 
+     $(this).addClass("open")
+ }
