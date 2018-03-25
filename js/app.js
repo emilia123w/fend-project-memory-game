@@ -3,7 +3,7 @@
  */
 let array= [
   'fa fa-diamond','fa fa-diamond',
-  'fa fa-paper-plane-o','fa-paper-plane-o',
+  'fa fa-paper-plane-o','fa fa-paper-plane-o',
   'fa fa-anchor','fa fa-anchor',
   'fa fa-bolt','fa fa-bolt',
   'fa fa-cube','fa fa-cube',
@@ -49,8 +49,27 @@ array.forEach(addCards);  //adding cards to html
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
- $(".card").click(playGame)
 
- function playGame(){ 
-     $(this).addClass("open")
+$(".card").click(open);
+ function open(e){
+   $(this).addClass("open show")
  }
+
+ let openCards = document.getElementsByClassName("open");
+ let openCard1 = openCards[0];
+ let openCard2 = openCards[1];
+
+if (openCards.length==2) {
+
+    if(openCard1.firstChild.className === openCard2.firstChild.className){
+    openCard1.addClass("match");
+    openCard2.addClass("match");
+    openCard1.classList.remove('open');
+		openCard2.classList.remove('open');
+    }
+
+  if(openCard1.firstChild.className !== openCard2.firstChild.className){
+    openCard1.classList.remove('open show');
+		openCard2.classList.remove('open show');
+  }
+}
