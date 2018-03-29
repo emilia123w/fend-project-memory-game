@@ -64,12 +64,12 @@ if (openCards.length==2) {
     if(openCard1.firstChild.className === openCard2.firstChild.className){
     openCard1.addClass("match");
     openCard2.addClass("match");
-    openCard1.classList.remove('open');
-		openCard2.classList.remove('open');
+    openCard1.removeClass("open");
+		openCard2.removeClass("open");
     }
 
   if(openCard1.firstChild.className !== openCard2.firstChild.className){
-    openCard1.classList.remove('open show');
-		openCard2.classList.remove('open show');
+    openCard1.removeClass("open show");
+		openCard2.removeClass("open show");
   }
 }
