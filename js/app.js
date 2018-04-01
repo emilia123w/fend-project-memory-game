@@ -53,10 +53,10 @@ array.forEach(addCards);  //adding cards to html
 $(".card").click(open);
  function open(e){
    $(this).addClass("open show")
- }
+
 
  let openCards = document.getElementsByClassName("open");
- Array.from(openCards);
+ Array.from(openCards); //array of all open cards
 
 
 if (openCards.length>1) {
@@ -71,4 +71,5 @@ if (openCards.length>1) {
     openCards[0].classList.remove("open", "show");
     openCards[0].classList.remove("open", "show");
   }
+}  // turns the cards if they match or not turns if match
 }
