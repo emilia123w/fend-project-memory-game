@@ -57,20 +57,18 @@ $(".card").click(open);
 
  let openCards = document.getElementsByClassName("open");
  Array.from(openCards);
- let openCard1 = openCards[0];
- let openCard2 = openCards[1];
 
-if (openCards.length===2) {
 
+if (openCards.length>1) {
     if(openCards[0].firstChild.className === openCards[1].firstChild.className){
     openCards[0].classList.add("match");
-    openCards[1].classList.add("match");
+    openCards[0].classList.add("match");
     openCards[0].classList.remove("open");
-		openCards[1].classList.remove("open");
+		openCards[0].classList.remove("open");
     }
 
   if(openCards[0].firstChild.className !== openCards[1].firstChild.className){
     openCards[0].classList.remove("open", "show");
-		openCards[1].classList.remove("open", "show");
+    openCards[0].classList.remove("open", "show");
   }
 }
