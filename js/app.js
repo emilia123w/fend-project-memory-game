@@ -48,13 +48,11 @@ array.forEach(addCards);  //adding cards to html
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
-
+let clicks = 0;
 $(".card").click(open);
  function open(e){
    $(this).addClass("open show")
-
-
+   clicks= clicks+1;  //count clicks
  let openCards = document.getElementsByClassName("open","show");
  Array.from(openCards); //array of all open cards
 
@@ -71,7 +69,11 @@ if (openCards.length>1) {
     setTimeout(function(){
     openCards[0].classList.remove("open", "show");
     openCards[0].classList.remove("open", "show");
-  },1000);
+  },700);
 }
 }  // turns the cards if they match or not turns if match
+//show clicks:
+document.querySelector(".moves").innerHTML=clicks;
+//display stars: //reload //timecount
+
 }
