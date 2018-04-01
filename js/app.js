@@ -55,21 +55,23 @@ $(".card").click(open);
    $(this).addClass("open show")
 
 
- let openCards = document.getElementsByClassName("open");
+ let openCards = document.getElementsByClassName("open","show");
  Array.from(openCards); //array of all open cards
 
 
 if (openCards.length>1) {
     if(openCards[0].firstChild.className === openCards[1].firstChild.className){
     openCards[0].classList.add("match");
-    openCards[0].classList.add("match");
+    openCards[1].classList.add("match");
     openCards[0].classList.remove("open");
-		openCards[0].classList.remove("open");
+    openCards[1].classList.remove("open")
     }
 
   if(openCards[0].firstChild.className !== openCards[1].firstChild.className){
+    setTimeout(function(){
     openCards[0].classList.remove("open", "show");
     openCards[0].classList.remove("open", "show");
-  }
+  },1000);
+}
 }  // turns the cards if they match or not turns if match
 }
