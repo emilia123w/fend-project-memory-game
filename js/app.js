@@ -60,6 +60,7 @@ if (openCards.length>1) {
 }
 }  // turns the cards if they match or not turns if match
 
+
 //show clicks:
 document.querySelector(".moves").innerHTML=clicks;
 
@@ -74,11 +75,42 @@ if (clicks>40){
 document.querySelector(".stars").lastChild.remove();
 }
 }
+
+//count time:
+if(clicks == 1){
+        countTime();
+    }
+  function countTime(){
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let interval= setInterval(function(){
+    $(".timer").html("Time:" +hours+":"+minutes +":"+seconds);
+    seconds++;
+    if (seconds==60){
+      minutes++;
+      seconds==0;
+    }
+    if (minutes==60){
+      hours++;
+      minutes=0;
+    }
+  },1000);
+
 }
 
 //reloading button:
 $(".restart").on("click", function(){
-  location.reload()
+  location.reload();
 })
+}
 
-//
+//finished game:
+let matchedArray = document.getElementsByClassName("match");
+Array.from(matchedArray); //takes all matched cards
+
+let finalTime=0; // shows final time
+if (matchedArray.length===16) {
+  clearInterval(interval);
+    finalTime = $(".timer").innerHTML;
+}
