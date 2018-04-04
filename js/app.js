@@ -94,16 +94,13 @@ if(clicks == 1){
     seconds++;
     if (seconds==60){
       minutes++;
-      seconds==0;
+      seconds=0;
     }
     if (minutes==60){
       hours++;
       minutes=0;
     }
   },1000);
-  if (matchedArray.length==16) { //stop counting time  -nie dziala
-    clearInterval(interval);
-  }
 }
 
 //reloading button:
@@ -113,5 +110,8 @@ $(".restart").on("click", function(){
 }
 
 //finished game:
+if (matchedArray.length==16) { //stop counting time  -nie dziala
+  clearInterval(interval);
+}
 let finalTime=0; // shows final time   //work on it
   finalTime = $(".timer").innerHTML;
