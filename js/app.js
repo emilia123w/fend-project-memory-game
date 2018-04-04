@@ -11,6 +11,10 @@ let array= [
   'fa fa-bomb','fa fa-bomb',
 ]
 
+let interval;
+let matchedArray = document.getElementsByClassName("match");
+Array.from(matchedArray); //takes all matched cards
+
 //shuffle function:
    function shuffle(array) {  // Shuffle function from http://stackoverflow.com/a/2450976
        var currentIndex = array.length, temporaryValue, randomIndex;
@@ -80,11 +84,12 @@ document.querySelector(".stars").lastChild.remove();
 if(clicks == 1){
         countTime();
     }
+
   function countTime(){
     let seconds = 0;
     let minutes = 0;
     let hours = 0;
-    let interval= setInterval(function(){
+    interval = setInterval(function(){
     $(".timer").html("Time:" +hours+":"+minutes +":"+seconds);
     seconds++;
     if (seconds==60){
@@ -96,7 +101,9 @@ if(clicks == 1){
       minutes=0;
     }
   },1000);
-
+  if (matchedArray.length==16) { //stop counting time  -nie dziala
+    clearInterval(interval);
+  }
 }
 
 //reloading button:
@@ -106,11 +113,5 @@ $(".restart").on("click", function(){
 }
 
 //finished game:
-let matchedArray = document.getElementsByClassName("match");
-Array.from(matchedArray); //takes all matched cards
-
-let finalTime=0; // shows final time
-if (matchedArray.length===16) {
-  clearInterval(interval);
-    finalTime = $(".timer").innerHTML;
-}
+let finalTime=0; // shows final time   //work on it
+  finalTime = $(".timer").innerHTML;
