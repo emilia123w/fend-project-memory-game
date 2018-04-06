@@ -15,6 +15,8 @@ let interval;
 let matchedArray = document.getElementsByClassName("match");
 Array.from(matchedArray); //takes all matched cards
 
+
+
 //shuffle function:
    function shuffle(array) {  // Shuffle function from http://stackoverflow.com/a/2450976
        var currentIndex = array.length, temporaryValue, randomIndex;
@@ -40,7 +42,7 @@ array.forEach(addCards);  //adding cards to html
 
 //open cards:
   let clicks = 0;
-  $(".card").click(open);
+  $(".card").on("click", open);
   function open(e){
     $(this).addClass("open show")
     clicks= clicks+1;  //count clicks
@@ -53,14 +55,14 @@ if (openCards.length>1) {
     openCards[0].classList.add("match");
     openCards[1].classList.add("match");
     openCards[0].classList.remove("open");
-    openCards[1].classList.remove("open")
+
     }
 
   if(openCards[0].firstChild.className !== openCards[1].firstChild.className){
     setTimeout(function(){
     openCards[0].classList.remove("open", "show");
     openCards[0].classList.remove("open", "show");
-  },700);
+  },600);
 }
 }  // turns the cards if they match or not turns if match
 
@@ -100,8 +102,15 @@ if(clicks == 1){
       hours++;
       minutes=0;
     }
+    if (matchedArray.length==16) { //stop counting time
+      clearInterval(interval);
+      $(".winner").removeClass("hidden") //shows congratulations to the winner
+
+    }
   },1000);
 }
+
+
 
 //reloading button:
 $(".restart").on("click", function(){
@@ -110,8 +119,6 @@ $(".restart").on("click", function(){
 }
 
 //finished game:
-if (matchedArray.length==16) { //stop counting time  -nie dziala
-  clearInterval(interval);
-}
-let finalTime=0; // shows final time   //work on it
+
+let finalTime=0; // shows final time
   finalTime = $(".timer").innerHTML;
