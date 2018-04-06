@@ -15,6 +15,8 @@ let interval;
 let matchedArray = document.getElementsByClassName("match");
 Array.from(matchedArray); //takes all matched cards
 
+let stars = 0;
+let finalTime=0
 
 
 //shuffle function:
@@ -104,6 +106,10 @@ if(clicks == 1){
     }
     if (matchedArray.length==16) { //stop counting time
       clearInterval(interval);
+        finalTime = $(".timer"); // shows final time
+        stars = $(".stars").css({"list-style":"none","display":"flex","flex-direction":"row","justify-content":"center"});
+      $(".showTime").html(finalTime);
+      $(".showStars").append(stars);
       $(".winner").removeClass("hidden") //shows congratulations to the winner
 
     }
@@ -116,9 +122,8 @@ if(clicks == 1){
 $(".restart").on("click", function(){
   location.reload();
 })
+$(".finalButton").on("click", function(){
+  location.reload();
+})
+
 }
-
-//finished game:
-
-let finalTime=0; // shows final time
-  finalTime = $(".timer").innerHTML;
