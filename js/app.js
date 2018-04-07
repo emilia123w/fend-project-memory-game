@@ -53,14 +53,14 @@ array.forEach(addCards);  //adding cards to html
 
 //matching cards:
 if (openCards.length>1) {
-    if(openCards[0].firstChild.className === openCards[1].firstChild.className){
+    if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
     openCards[0].classList.add("match");
     openCards[1].classList.add("match");
     openCards[0].classList.remove("open");
 
     }
 
-  if(openCards[0].firstChild.className !== openCards[1].firstChild.className){
+  if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
     setTimeout(function(){
     openCards[0].classList.remove("open", "show");
     openCards[0].classList.remove("open", "show");
@@ -74,12 +74,12 @@ document.querySelector(".moves").innerHTML=clicks;
 
 //display stars:
 if (clicks>20){
-  if (clicks<23){
+  if (clicks<23) {
 document.querySelector(".stars").lastChild.remove();
 }
 }
-if (clicks>40){
-  if (clicks<43){
+if (clicks>40) {
+  if (clicks<43) {
 document.querySelector(".stars").lastChild.remove();
 }
 }
@@ -93,14 +93,14 @@ if(clicks == 1){
     let seconds = 0;
     let minutes = 0;
     let hours = 0;
-    interval = setInterval(function(){
-    $(".timer").html("Time:" +hours+":"+minutes +":"+seconds);
+    interval = setInterval(function() {
+    $(".timer").html("Time:"+hours+":"+minutes +":"+seconds);
     seconds++;
-    if (seconds==60){
+    if (seconds==60) {
       minutes++;
       seconds=0;
     }
-    if (minutes==60){
+    if (minutes==60) {
       hours++;
       minutes=0;
     }
@@ -119,11 +119,11 @@ if(clicks == 1){
 
 
 //reloading button:
-$(".restart").on("click", function(){
-  location.reload();
-})
-$(".finalButton").on("click", function(){
+$(".restart").on("click", function() {
   location.reload();
 })
 
+$(".finalButton").on("click", function() {
+  location.reload();
+});
 }
