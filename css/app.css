@@ -18,7 +18,7 @@ body {
 
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .container {
@@ -29,8 +29,8 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    color:#42233f;
+    font-weight: 200;
 }
 
 /*
@@ -96,6 +96,7 @@ h1 {
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
+    color: gold;
 }
 
 .score-panel .stars li {
@@ -129,4 +130,13 @@ h1 {
   padding:10px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.finalButton:hover {
+  cursor:pointer;
+}
+
+.restart {
+  font-size:30px;
+  color:#42233f;
 }
