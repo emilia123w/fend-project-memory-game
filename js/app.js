@@ -43,29 +43,29 @@ array= shuffle(array);
 array.forEach(addCards);  //adding cards to html
 
 //open cards:
+
   let clicks = 0;
   $(".card").on("click", open);
   function open(e){
     $(this).addClass("open show")
     clicks= clicks+1;  //count clicks
-    let openCards = document.getElementsByClassName ("show");
+    let openCards = document.getElementsByClassName ("open","show");
  Array.from(openCards); //array of all open cards
 
 //matching cards:
-if (openCards.length>1) {
-    if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
-    openCards[0].classList.add("match");
-    openCards[1].classList.add("match");
-    openCards[0].classList.remove("open");
+    if (openCards.length==2) {
+      if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
+          openCards[0].classList.add("match");
+          openCards[1].classList.add("match");
+          openCards[0].classList.remove("open");
+        }
 
-    }
-
-  if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
-    setTimeout(function(){
-    openCards[0].classList.remove("open", "show");
-    openCards[0].classList.remove("open", "show");
-  },600);
-}
+      if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
+          setTimeout(function(){
+            openCards[0].classList.remove("open","show");
+            openCards[0].classList.remove("open","show");
+          },600);
+        }
 }  // turns the cards if they match or not turns if match
 
 
