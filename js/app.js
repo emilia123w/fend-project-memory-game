@@ -48,7 +48,7 @@ array.forEach(addCards);  //adding cards to html
   function open(e){
     $(this).addClass("open show")
     clicks= clicks+1;  //count clicks
-    let openCards = document.getElementsByClassName("open","show");
+    let openCards = document.getElementsByClassName ("show");
  Array.from(openCards); //array of all open cards
 
 //matching cards:
