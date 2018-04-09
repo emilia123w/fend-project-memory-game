@@ -55,19 +55,19 @@ array.forEach(addCards);  //adding cards to html
 
 //matching cards:
     if (openCards.length==2) {
-      if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
-          openCards[0].classList.add("match");
-          openCards[1].classList.add("match");
-          openCards[0].classList.remove("open");
-          clicks= clicks+1; //count one move
-        }
 
-      else if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
+      if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
           setTimeout(function(){
             openCards[0].classList.remove("open","show");
             openCards[0].classList.remove("open","show");
           },600);
-          clicks= clicks+1;  //count one move
+          clicks = clicks+1;  //count one move
+        }
+      else if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
+            openCards[0].classList.add("match");
+            openCards[1].classList.add("match");
+            openCards[0].classList.remove("open");   //popr
+            clicks = clicks+1; //count one move
         }
 }  // turns the cards if they match or not turns if match
 }
