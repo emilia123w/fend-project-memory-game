@@ -140,3 +140,28 @@ h1 {
   font-size:30px;
   color:#42233f;
 }
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 30px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top:20px;
+  }
+  .deck {
+    transform: scale(0.6);
+    margin-top: -80px;
+  }
+}
+@media screen and (max-width: 400px){
+  .deck {
+  transform: scale(0.4);
+  margin-top: -160px;
+  }
+  .score-panel {
+    margin-left:70px;
+  }
+  .restart {
+    margin-right:50px;
+  }
+}
