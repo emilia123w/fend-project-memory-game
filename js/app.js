@@ -47,6 +47,8 @@ array.forEach(addCards);  //adding cards to html
   let clicks = 0;
   $(".card").on("click", open);
   function open(e){
+    let oneCard = e.target;
+    if (oneCard.length=1){ //only one card can be clicked at the same time
         $(this).addClass("open show")
     let openCards = document.getElementsByClassName ("open","show");
  Array.from(openCards); //array of all open cards
@@ -68,7 +70,7 @@ array.forEach(addCards);  //adding cards to html
           clicks= clicks+1;  //count one move
         }
 }  // turns the cards if they match or not turns if match
-
+}
 //show clicks:
 document.querySelector(".moves").innerHTML=clicks;
 
