@@ -46,9 +46,9 @@ array.forEach(addCards);  //adding cards to html
   let clicks = 0;
   $(".card").on("click", open);
   function open(e){
-    e.target==1;
+                          //only one card at the time!!!
     $(this).addClass("open show")
-    clicks= clicks+1;  //count clicks
+      //count clicks //only for a move
     let openCards = document.getElementsByClassName ("open","show");
  Array.from(openCards); //array of all open cards
 
@@ -58,6 +58,7 @@ array.forEach(addCards);  //adding cards to html
           openCards[0].classList.add("match");
           openCards[1].classList.add("match");
           openCards[0].classList.remove("open");
+          clicks= clicks+1;
         }
 
       if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
@@ -65,21 +66,21 @@ array.forEach(addCards);  //adding cards to html
             openCards[0].classList.remove("open","show");
             openCards[0].classList.remove("open","show");
           },600);
+          clicks= clicks+1;
         }
 }  // turns the cards if they match or not turns if match
-
 
 //show clicks:
 document.querySelector(".moves").innerHTML=clicks;
 
 //display stars:
-if (clicks>20){
-  if (clicks<23) {
+if (clicks>10){
+  if (clicks<12) {
 document.querySelector(".stars").lastChild.remove();
 }
 }
-if (clicks>40) {
-  if (clicks<43) {
+if (clicks>20) {
+  if (clicks<22) {
 document.querySelector(".stars").lastChild.remove();
 }
 }
