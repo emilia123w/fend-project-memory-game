@@ -18,7 +18,6 @@ Array.from(matchedArray); //takes all matched cards
 let stars = 0;
 let finalTime=0
 
-
 //shuffle function:
    function shuffle(array) {  // Shuffle function from http://stackoverflow.com/a/2450976
        var currentIndex = array.length, temporaryValue, randomIndex;
@@ -46,8 +45,8 @@ array.forEach(addCards);  //adding cards to html
 
   let clicks = 0;
   $(".card").on("click", open);
-  e.target==1;
   function open(e){
+    e.target==1;
     $(this).addClass("open show")
     clicks= clicks+1;  //count clicks
     let openCards = document.getElementsByClassName ("open","show");
@@ -120,9 +119,9 @@ if(clicks == 1){
 
 
 //reloading button:
-$(".restart").on("click", function() {
+$(".restart").on("click", function(){
   location.reload();
-})
+});
 
 $(".finalButton").on("click", function() {
   location.reload();
