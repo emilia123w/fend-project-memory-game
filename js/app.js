@@ -34,6 +34,7 @@ let finalTime=0
    }
 array= shuffle(array);
 
+
 //displays cards on the page:
   function addCards(item, index)  {
     document.querySelector(".deck").innerHTML+=`<li class="card"><i class="${item}"></i></li>`
@@ -46,9 +47,7 @@ array.forEach(addCards);  //adding cards to html
   let clicks = 0;
   $(".card").on("click", open);
   function open(e){
-                          //only one card at the time!!!
-    $(this).addClass("open show")
-      //count clicks //only for a move
+        $(this).addClass("open show")
     let openCards = document.getElementsByClassName ("open","show");
  Array.from(openCards); //array of all open cards
 
@@ -58,15 +57,15 @@ array.forEach(addCards);  //adding cards to html
           openCards[0].classList.add("match");
           openCards[1].classList.add("match");
           openCards[0].classList.remove("open");
-          clicks= clicks+1;
+          clicks= clicks+1; //count one move
         }
 
-      if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
+      else if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
           setTimeout(function(){
             openCards[0].classList.remove("open","show");
             openCards[0].classList.remove("open","show");
           },600);
-          clicks= clicks+1;
+          clicks= clicks+1;  //count one move
         }
 }  // turns the cards if they match or not turns if match
 
@@ -85,12 +84,9 @@ document.querySelector(".stars").lastChild.remove();
 }
 }
 
-//count time:
-if(clicks == 1){
-        countTime();
-    }
+//count time
 
-  function countTime(){
+  function countTime() {
     let seconds = 0;
     let minutes = 0;
     let hours = 0;
@@ -117,12 +113,16 @@ if(clicks == 1){
   },1000);
 }
 
-
+//count time:
+if (clicks == 0) {
+    countTime();
+}
 
 //reloading button:
-$(".restart").on("click", function(){
-  location.reload();
-});
+$(".restart").on("click", function() {
+location.reload();
+
+});//to be corrected
 
 $(".finalButton").on("click", function() {
   location.reload();
