@@ -2,19 +2,25 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Game](#Game)
+* [Time and click counter](#Time and click counter)
+* [reload](#reload)
+* [finish](#finish)
 
-## Instructions
+## Game
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+There are 16 cards on the desktop, each has a pair. The goal of the game is to match all cards.
+By clicking on the card user can see the picture and find the same. If they don't match, they turn back again, if they match, they stay uncovered.
+If all cards are uncovered game finish.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## time and click counter
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+When game starts , starts also the timer , which stops when the game finish. Also there is click counter which count all moves. According to the number of moves player can receive 3, 2 or one star.
 
-## Contributing
+## reload
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+To start the game again there is reload button on the right top.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Finish
+
+When game finish, appear the screen with congratulations and time and rating of the winner
