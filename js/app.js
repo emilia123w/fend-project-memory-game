@@ -46,6 +46,7 @@ array.forEach(addCards);  //adding cards to html
 
   let clicks = 0;
   $(".card").on("click", open);
+  e.target==1;
   function open(e){
     $(this).addClass("open show")
     clicks= clicks+1;  //count clicks
