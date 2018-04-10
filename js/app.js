@@ -49,7 +49,7 @@ array.forEach(addCards);  //adding cards to html
   function open(e){
     let oneCard = e.target;
     if (oneCard.length=1){ //only one card can be clicked at the same time
-        $(this).addClass("open show")
+        $(this).addClass("open show disabled")
     let openCards = document.getElementsByClassName ("open","show");
  Array.from(openCards); //array of all open cards
 
@@ -58,15 +58,15 @@ array.forEach(addCards);  //adding cards to html
 
       if (openCards[0].firstChild.className !== openCards[1].firstChild.className) {
           setTimeout(function(){
-            openCards[0].classList.remove("open","show");
-            openCards[0].classList.remove("open","show");
+            openCards[0].classList.remove("open","show","disabled");
+            openCards[0].classList.remove("open","show","disabled");
           },600);
           clicks = clicks+1;  //count one move
         }
       else if (openCards[0].firstChild.className === openCards[1].firstChild.className) {
             openCards[0].classList.add("match");
             openCards[1].classList.add("match");
-            openCards[0].classList.remove("open");   //popr
+            openCards[0].classList.remove("open", "disabled");
             clicks = clicks+1; //count one move
         }
 }  // turns the cards if they match or not turns if match
@@ -75,16 +75,15 @@ array.forEach(addCards);  //adding cards to html
 document.querySelector(".moves").innerHTML=clicks;
 
 //display stars:
-if (clicks>10){
-  if (clicks<12) {
+
+if (clicks==10){
 document.querySelector(".stars").lastChild.remove();
 }
-}
-if (clicks>20) {
-  if (clicks<22) {
+
+if (clicks==20) {
 document.querySelector(".stars").lastChild.remove();
 }
-}
+
 
 //count time
 
