@@ -6,6 +6,7 @@
 * [Time and click counter](#Time and click counter)
 * [reload](#reload)
 * [finish](#finish)
+* [code used](#code dependencies)
 
 ## Game
 
@@ -24,3 +25,11 @@ To start the game again there is reload button on the right top.
 ## Finish
 
 When game finish, appear the screen with congratulations and time and rating of the winner
+
+## code dependencies
+
+-HTML5
+-JS
+-jQuery 
+-css -styling
+-Google font - pictures on the cards
